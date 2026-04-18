@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=390, initial-scale=1">
-<title>La Esperanza — Prototipo</title>
+<title>La esperanza — Prototipo</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -18,7 +18,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .screen{display:none;flex-direction:column;min-height:844px;}
 .screen.active{display:flex;}
 
-/* ── Topbar ── */
 .topbar{padding:14px 18px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
 .topbar.green{background:var(--g9);}
 .topbar.blue{background:var(--b9);}
@@ -26,7 +25,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .topbar h2{font-size:16px;font-weight:800;color:#fff;flex:1;}
 .back-btn{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.18);color:#fff;font-size:15px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;}
 
-/* ── Nav ── */
 .bottom-nav{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--gray2);display:flex;padding:8px 0 12px;flex-shrink:0;z-index:10;}
 .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;font-weight:700;color:var(--gray);cursor:pointer;border:none;background:transparent;}
 .nav-item.active-green{color:var(--g9);}
@@ -34,14 +32,12 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .nav-item.active-orange{color:var(--o9);}
 .nav-item .ico{font-size:18px;}
 
-/* ── Cards & Fields ── */
 .card{background:#fff;border-radius:16px;padding:13px 15px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:10px;}
 .field{margin-bottom:13px;}
 .field label{display:block;font-size:11px;font-weight:800;color:#333;margin-bottom:5px;text-transform:uppercase;letter-spacing:.3px;}
 .field input,.field select,.field textarea{width:100%;padding:11px 13px;border-radius:12px;border:2px solid var(--gray2);font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:#222;background:var(--light);outline:none;}
 .field textarea{height:64px;resize:none;}
 
-/* ── Buttons ── */
 .btn{width:100%;padding:13px;border-radius:14px;border:none;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;cursor:pointer;margin-top:6px;}
 .btn-green{background:var(--g9);color:#fff;}
 .btn-blue{background:var(--b9);color:#fff;}
@@ -49,43 +45,36 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .btn-outline-green{background:var(--g0);border:2px solid var(--g1);color:var(--g9);}
 .btn-outline-red{background:#FFEBEE;border:2px solid #FFCDD2;color:var(--red);}
 
-/* ── Badges ── */
 .badge{display:inline-block;font-size:10px;font-weight:800;padding:3px 9px;border-radius:20px;}
 .badge-green{background:var(--g0);color:var(--g9);}
 .badge-orange{background:var(--o0);color:var(--o9);}
 .badge-red{background:#FFEBEE;color:var(--red);}
 .badge-blue{background:var(--b0);color:var(--b9);}
 
-/* ── Content area ── */
 .content{padding:14px 15px;flex:1;overflow-y:auto;}
 .section-label{font-size:11px;font-weight:800;color:var(--g7);letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px;margin-top:16px;}
 
-/* ── Role selector ── */
 .role-row{display:flex;gap:8px;margin-bottom:20px;}
 .role-btn{flex:1;padding:10px 4px;border-radius:13px;border:2px solid var(--gray2);background:var(--light);font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;color:var(--gray);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;}
 .role-btn.sel{border-color:var(--g5);background:var(--g0);color:var(--g9);}
 .role-btn span{font-size:20px;}
 
-/* ── Stat card ── */
 .stats-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;}
 .stat-card{background:rgba(255,255,255,.13);border-radius:13px;padding:10px 8px;text-align:center;}
 .stat-card .val{font-size:20px;font-weight:900;color:#fff;}
 .stat-card .lbl{font-size:9px;color:rgba(255,255,255,.7);font-weight:700;margin-top:1px;}
 
-/* ── Product card ── */
 .product-card{background:#fff;border-radius:14px;display:flex;align-items:center;gap:11px;margin-bottom:9px;padding:11px 13px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
 .prod-img{width:50px;height:50px;border-radius:11px;background:var(--g0);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
 .prod-info h4{font-size:13px;font-weight:800;color:#222;margin-bottom:1px;}
 .prod-info p{font-size:11px;color:var(--gray);font-weight:600;}
 .prod-info .price{font-size:13px;font-weight:800;color:var(--g9);}
 
-/* ── Pedido card ── */
 .pedido-card{background:#fff;border-radius:14px;padding:12px 13px;margin-bottom:9px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
 .pedido-card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
 .pedido-card h4{font-size:13px;font-weight:800;color:#222;}
 .pedido-card p{font-size:11px;color:var(--gray);font-weight:600;}
 
-/* ── Hero product ── */
 .hero-img{height:160px;background:var(--g0);display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;flex-shrink:0;}
 .hero-back{position:absolute;top:12px;left:12px;width:34px;height:34px;background:rgba(255,255,255,.8);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:15px;border:none;cursor:pointer;}
 .qty-ctrl{display:flex;align-items:center;gap:12px;}
@@ -93,7 +82,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .qty-val{font-size:18px;font-weight:900;color:#222;min-width:26px;text-align:center;}
 .bottom-bar{background:#fff;padding:11px 15px 18px;border-top:1px solid var(--gray2);display:flex;gap:10px;align-items:center;flex-shrink:0;}
 
-/* ── Chat ── */
 .chat-wrap{background:linear-gradient(135deg,var(--g9),var(--g7));border-radius:13px;padding:13px;margin-bottom:10px;}
 .chat-head{display:flex;align-items:center;gap:7px;margin-bottom:10px;}
 .chat-head h3{font-size:12px;font-weight:800;color:#fff;}
@@ -110,7 +98,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .chat-input input::placeholder{color:rgba(255,255,255,.5);}
 .send-btn{width:34px;height:34px;background:#fff;border-radius:50%;border:none;display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;}
 
-/* ── Confirm chip ── */
 .confirm-row{display:flex;gap:7px;margin:10px 0;}
 .confirm-chip{flex:1;border-radius:11px;padding:9px 7px;display:flex;align-items:center;gap:6px;border:2px solid;}
 .confirm-chip.done{border-color:var(--g1);background:var(--g0);}
@@ -118,7 +105,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .confirm-chip h5{font-size:11px;font-weight:800;color:#222;margin-bottom:1px;}
 .confirm-chip p{font-size:9px;font-weight:600;color:var(--gray);}
 
-/* ── Admin ── */
 .kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .kpi{background:rgba(255,255,255,.13);border-radius:13px;padding:11px 13px;}
 .kpi .val{font-size:22px;font-weight:900;color:#fff;}
@@ -129,19 +115,16 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .bar{width:100%;border-radius:5px 5px 0 0;}
 .bar-label{font-size:8px;font-weight:800;color:var(--gray);}
 
-/* ── User card ── */
 .user-card{background:#fff;border-radius:14px;padding:11px 13px;margin-bottom:9px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
 .user-row{display:flex;align-items:center;gap:11px;}
 .user-avatar{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .user-actions{display:flex;gap:7px;margin-top:9px;}
 .action-btn{flex:1;padding:8px;border-radius:11px;border:none;font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;cursor:pointer;}
 
-/* ── Alert ── */
 .alert-item{background:#fff;border-radius:13px;padding:11px 13px;margin-bottom:9px;display:flex;align-items:flex-start;gap:9px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
 .alert-item h4{font-size:12px;font-weight:800;color:#222;margin-bottom:2px;}
 .alert-item p{font-size:11px;color:var(--gray);font-weight:600;}
 
-/* ── Timeline ── */
 .tl{display:flex;align-items:center;justify-content:space-between;margin:12px 0;}
 .tl-step{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;}
 .tl-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;}
@@ -154,14 +137,12 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .tl-lbl.done{color:var(--g9);}
 .tl-lbl.cur{color:var(--o5);}
 
-/* ── Profile ── */
 .profile-hero{background:linear-gradient(160deg,var(--g9),var(--g7));padding:18px 18px 50px;text-align:center;flex-shrink:0;}
 .profile-avatar{width:72px;height:72px;background:#fff;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 9px;}
 .star-row{display:flex;justify-content:center;gap:6px;}
 .star{font-size:22px;cursor:pointer;opacity:.3;}
 .star.sel{opacity:1;}
 
-/* ── Catalog grid ── */
 .cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
 .cat-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05);cursor:pointer;}
 .cat-card .ci{height:80px;background:var(--g0);display:flex;align-items:center;justify-content:center;font-size:40px;}
@@ -171,35 +152,29 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 .cat-card .price{font-size:14px;font-weight:900;color:var(--g9);}
 .cat-card .add{width:100%;margin-top:7px;padding:7px;background:var(--g9);color:#fff;border:none;border-radius:9px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;cursor:pointer;}
 
-/* ── Category pills ── */
 .cat-pills{background:#fff;padding:10px 14px;display:flex;gap:7px;overflow-x:auto;border-bottom:1px solid var(--gray2);flex-shrink:0;}
 .cat-pills::-webkit-scrollbar{display:none;}
 .pill{white-space:nowrap;padding:6px 13px;border-radius:18px;border:2px solid var(--gray2);background:var(--light);font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;color:#555;cursor:pointer;flex-shrink:0;}
 .pill.active{border-color:var(--g5);background:var(--g0);color:var(--g9);}
 
-/* ── Search bar ── */
 .search-wrap{background:rgba(255,255,255,.13);border-radius:13px 13px 0 0;padding:9px 13px;display:flex;align-items:center;gap:7px;}
 .search-wrap input{background:transparent;border:none;outline:none;font-family:'Nunito',sans-serif;font-size:13px;color:#fff;flex:1;font-weight:600;}
 .search-wrap input::placeholder{color:rgba(255,255,255,.55);}
 
-/* ── Tabs ── */
 .tabs{background:#fff;display:flex;border-bottom:2px solid var(--gray2);flex-shrink:0;}
 .tab{flex:1;padding:11px 4px;text-align:center;font-size:11px;font-weight:800;color:var(--gray);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;border:none;background:transparent;}
 .tab.active-g{color:var(--g9);border-bottom:3px solid var(--g9);}
 .tab.active-o{color:var(--o9);border-bottom:3px solid var(--o9);}
 
-/* ── Info row ── */
 .info-row{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid var(--gray2);}
 .info-row:last-child{border-bottom:none;}
 .info-row .lbl{font-size:10px;font-weight:800;color:var(--gray);text-transform:uppercase;flex:1;}
 .info-row .val{font-size:12px;font-weight:700;color:#222;}
 
-/* ── Register role banner ── */
 .role-banner{background:var(--g9);border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:11px;margin-bottom:18px;}
 .role-banner h3{font-size:15px;font-weight:800;color:#fff;}
 .role-banner p{font-size:11px;color:rgba(255,255,255,.8);font-weight:600;}
 
-/* ── Quick actions ── */
 .quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px;}
 .qa-btn{background:#fff;border-radius:13px;padding:13px;display:flex;flex-direction:column;align-items:center;gap:5px;border:none;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.05);}
 .qa-btn .ico{font-size:24px;}
@@ -209,16 +184,13 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
 <body>
 <div class="device">
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 1: LOGIN
-══════════════════════════════════════════════════ -->
 <div class="screen active" id="s-login">
   <div style="background:linear-gradient(135deg,var(--g9),var(--g7));flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;">
     <div style="background:#fff;border-radius:26px;padding:30px 24px 26px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,.3);">
       <div style="text-align:center;margin-bottom:24px;">
         <div style="width:66px;height:66px;background:var(--g9);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 9px;font-size:30px;">🌿</div>
         <h1 style="font-size:20px;font-weight:900;color:var(--g9);">La Esperanza</h1>
-        <p style="font-size:11px;color:var(--gray);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Comunidad Agrícola</p>
+        <p style="font-size:11px;color:var(--gray);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Comunidad agrícola</p>
       </div>
       <p style="font-size:15px;font-weight:800;color:var(--g9);text-align:center;margin-bottom:14px;">¿Quién eres?</p>
       <div class="role-row">
@@ -226,7 +198,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
         <button class="role-btn" onclick="selectRole(this,'Comprador')"><span>🛒</span>Comprador</button>
         <button class="role-btn" onclick="selectRole(this,'Asociación')"><span>🏛️</span>Asociación</button>
       </div>
-      <div class="field"><label>Teléfono</label><input type="tel" placeholder="Ej. 5512-3456" value="5512-3456"></div>
+      <div class="field"><label>Teléfono</label><input type="tel" placeholder="Ej. 4594-7243" value="4594-7243"></div>
       <div class="field"><label>Contraseña</label><input type="password" value="••••••••"></div>
       <button class="btn btn-green" onclick="doLogin()">Entrar →</button>
       <div style="text-align:center;margin:12px 0;color:var(--gray);font-size:12px;font-weight:700;">o</div>
@@ -236,9 +208,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 2: REGISTRO
-══════════════════════════════════════════════════ -->
+
 <div class="screen" id="s-registro">
   <div class="topbar green">
     <button class="back-btn" onclick="goTo('s-login')">←</button>
@@ -255,7 +225,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
       <span style="font-size:16px;">🔒</span>
       <p style="font-size:11px;color:#444;font-weight:600;line-height:1.5;">Tus datos están protegidos. Solo los usamos para identificarte si hay algún problema.</p>
     </div>
-    <div class="field"><label>Nombre completo *</label><input type="text" value="María López Pérez"></div>
+    <div class="field"><label>Nombre completo *</label><input type="text" value="Galilea Marchena Villatoro"></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
       <div class="field"><label>No. Cédula *</label><input type="text" value="1234567"></div>
       <div class="field"><label>Teléfono *</label><input type="tel" value="5512-3456"></div>
@@ -267,15 +237,12 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 3: DASHBOARD PRODUCTOR
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-dashboard-prod">
   <div style="background:var(--g9);padding:15px 18px 18px;flex-shrink:0;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;">
       <div>
         <p style="font-size:11px;color:rgba(255,255,255,.7);font-weight:600;">Buenos días 🌤️</p>
-        <h2 style="font-size:18px;font-weight:900;color:#fff;">María López</h2>
+        <h2 style="font-size:18px;font-weight:900;color:#fff;">Galilea Marchena Villatoro</h2>
         <p style="font-size:11px;color:#FFD54F;font-weight:700;">★★★★☆ 4.2</p>
       </div>
       <div style="width:40px;height:40px;border-radius:13px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:20px;">🌱</div>
@@ -322,9 +289,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 4: REGISTRAR PRODUCTO
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-registrar-prod">
   <div class="topbar green">
     <button class="back-btn" onclick="goTo('s-dashboard-prod')">←</button>
@@ -364,9 +328,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 5: CATÁLOGO PÚBLICO (sin sesión)
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-catalogo-pub">
   <div style="background:var(--g9);padding:15px 18px 0;flex-shrink:0;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;">
@@ -392,7 +353,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   <div class="content" style="padding-top:0;">
     <p style="font-size:12px;font-weight:700;color:var(--gray);margin-bottom:10px;">24 productos disponibles</p>
     <div class="cat-grid">
-      <div class="cat-card"><div class="ci">🍅</div><div class="cb"><h4>Tomate cherry</h4><div class="seller">María L. · ★4.2</div><div class="price">Q12 <span style="font-size:10px;font-weight:600;color:var(--gray);">/ lb</span></div></div></div>
+      <div class="cat-card"><div class="ci">🍅</div><div class="cb"><h4>Tomate cherry</h4><div class="seller">Galilea M. · ★4.2</div><div class="price">Q12 <span style="font-size:10px;font-weight:600;color:var(--gray);">/ lb</span></div></div></div>
       <div class="cat-card"><div class="ci">🌽</div><div class="cb"><h4>Maíz blanco</h4><div class="seller">Pedro C. · ★4.8</div><div class="price">Q95 <span style="font-size:10px;font-weight:600;color:var(--gray);">/ qq</span></div></div></div>
       <div class="cat-card" style="position:relative;"><div class="ci">🥬</div><div class="cb"><h4>Lechuga romana</h4><div class="seller">Ana G. · ★4.5</div><div class="price">Q8 <span style="font-size:10px;font-weight:600;color:var(--gray);">/ manojo</span></div></div><div onclick="goTo('s-login')" style="position:absolute;inset:0;background:rgba(0,0,0,.42);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;"><span style="font-size:20px;">🔒</span><p style="font-size:10px;color:#fff;font-weight:800;">Inicia sesión</p></div></div>
       <div class="cat-card" style="position:relative;"><div class="ci">🫘</div><div class="cb"><h4>Frijol negro</h4><div class="seller">Luis M. · ★4.6</div><div class="price">Q110 <span style="font-size:10px;font-weight:600;color:var(--gray);">/ qq</span></div></div><div onclick="goTo('s-login')" style="position:absolute;inset:0;background:rgba(0,0,0,.42);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;"><span style="font-size:20px;">🔒</span><p style="font-size:10px;color:#fff;font-weight:800;">Inicia sesión</p></div></div>
@@ -405,9 +366,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 6: CATÁLOGO CON SESIÓN
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-catalogo">
   <div style="background:var(--b9);padding:15px 18px 0;flex-shrink:0;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;">
@@ -428,7 +386,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   <div class="content" style="padding-top:10px;">
     <p style="font-size:11px;color:var(--gray);font-weight:700;margin-bottom:10px;">24 productos encontrados</p>
     <div class="cat-grid">
-      <div class="cat-card" onclick="goTo('s-detalle-prod')"><div class="ci">🍅</div><div class="cb"><h4>Tomate cherry</h4><div class="seller">María L. · ★4.2</div><div class="price">Q12 / <span style="font-size:10px;">lb</span></div><button class="add">Pedir ahora</button></div></div>
+      <div class="cat-card" onclick="goTo('s-detalle-prod')"><div class="ci">🍅</div><div class="cb"><h4>Tomate cherry</h4><div class="seller">Galilea M. · ★4.2</div><div class="price">Q12 / <span style="font-size:10px;">lb</span></div><button class="add">Pedir ahora</button></div></div>
       <div class="cat-card" onclick="goTo('s-detalle-prod')"><div class="ci">🌽</div><div class="cb"><h4>Maíz blanco</h4><div class="seller">Pedro C. · ★4.8</div><div class="price">Q95 / <span style="font-size:10px;">qq</span></div><button class="add">Pedir ahora</button></div></div>
       <div class="cat-card" onclick="goTo('s-detalle-prod')"><div class="ci">🥬</div><div class="cb"><h4>Lechuga romana</h4><div class="seller">Ana G. · ★4.5</div><div class="price">Q8 / <span style="font-size:10px;">manojo</span></div><button class="add">Pedir ahora</button></div></div>
       <div class="cat-card" onclick="goTo('s-detalle-prod')"><div class="ci">🫘</div><div class="cb"><h4>Frijol negro</h4><div class="seller">Luis M. · ★4.6</div><div class="price">Q110 / <span style="font-size:10px;">qq</span></div><button class="add">Pedir ahora</button></div></div>
@@ -446,9 +404,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 7: DETALLE DE PRODUCTO
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-detalle-prod">
   <div class="hero-img">
     🍅
@@ -465,7 +420,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
       <p style="font-size:11px;font-weight:800;color:var(--g9);text-transform:uppercase;margin-bottom:9px;">👨‍🌾 Productor</p>
       <div style="display:flex;align-items:center;gap:11px;">
         <div style="width:42px;height:42px;background:var(--g0);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🌱</div>
-        <div><p style="font-size:13px;font-weight:800;color:#222;">María López Pérez</p><p style="font-size:11px;color:var(--gray);font-weight:600;">Aldea El Naranjo · ★★★★☆ 4.2</p></div>
+        <div><p style="font-size:13px;font-weight:800;color:#222;">Galilea Marchena Villatoro</p><p style="font-size:11px;color:var(--gray);font-weight:600;">Aldea El Naranjo · ★★★★☆ 4.2</p></div>
       </div>
     </div>
     <div class="card">
@@ -495,9 +450,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 8: PEDIDOS PRODUCTOR
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-pedidos-prod">
   <div class="topbar green">
     <button class="back-btn" onclick="goTo('s-dashboard-prod')">←</button>
@@ -561,9 +513,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 9: DETALLE DE PEDIDO / CHAT
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-detalle-pedido">
   <div class="topbar green">
     <button class="back-btn" onclick="goTo('s-pedidos-prod')">←</button>
@@ -583,7 +532,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
     <div class="card">
       <p style="font-size:11px;font-weight:800;color:var(--g9);text-transform:uppercase;margin-bottom:9px;">👥 Partes</p>
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div style="text-align:center;flex:1;"><div style="font-size:26px;margin-bottom:3px;">🌱</div><p style="font-size:11px;font-weight:800;color:#222;">María López</p><p style="font-size:9px;color:var(--gray);">Productora</p></div>
+        <div style="text-align:center;flex:1;"><div style="font-size:26px;margin-bottom:3px;">🌱</div><p style="font-size:11px;font-weight:800;color:#222;">Galilea M.</p><p style="font-size:9px;color:var(--gray);">Productora</p></div>
         <span style="font-size:18px;color:var(--gray);">⇄</span>
         <div style="text-align:center;flex:1;"><div style="font-size:26px;margin-bottom:3px;">🛒</div><p style="font-size:11px;font-weight:800;color:#222;">Carlos Mendoza</p><p style="font-size:9px;color:var(--gray);">Comprador</p></div>
       </div>
@@ -610,9 +559,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 10: ENTREGAS
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-entregas">
   <div class="topbar green">
     <button class="back-btn" onclick="goTo('s-dashboard-prod')">←</button>
@@ -626,7 +572,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   <div class="content">
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;">
-        <div><p style="font-size:13px;font-weight:800;color:#222;">Pedido #2043 · Tomate</p><p style="font-size:10px;color:var(--gray);">Carlos Mendoza → María López</p></div>
+        <div><p style="font-size:13px;font-weight:800;color:#222;">Pedido #2043 · Tomate</p><p style="font-size:10px;color:var(--gray);">Carlos Mendoza → Galilea Marchena</p></div>
         <span class="badge badge-orange">Pendiente comprador</span>
       </div>
       <div class="info-row"><span class="ico" style="font-size:14px;">📅</span><div style="flex:1;"><div class="lbl">Fecha acordada</div><div class="val">Jueves 20 marzo, 2:00 pm</div></div></div>
@@ -640,7 +586,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
     </div>
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;">
-        <div><p style="font-size:13px;font-weight:800;color:#222;">Pedido #2047 · Maíz</p><p style="font-size:10px;color:var(--gray);">Tienda El Sol → María López</p></div>
+        <div><p style="font-size:13px;font-weight:800;color:#222;">Pedido #2047 · Maíz</p><p style="font-size:10px;color:var(--gray);">Tienda El Sol → Galilea Marchena</p></div>
         <span class="badge badge-blue">⏳ Sin confirmar</span>
       </div>
       <div class="confirm-row">
@@ -660,9 +606,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 11: DASHBOARD ASOCIACIÓN
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-dashboard-asoc">
   <div style="background:linear-gradient(135deg,var(--o9),var(--o7));padding:17px 18px 18px;flex-shrink:0;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;">
@@ -715,9 +658,6 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 12: GESTIÓN DE USUARIOS
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-gestion-usuarios">
   <div class="topbar orange">
     <button class="back-btn" onclick="goTo('s-dashboard-asoc')">←</button>
@@ -740,7 +680,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
     <div class="user-card">
       <div class="user-row">
         <div class="user-avatar" style="background:var(--g0);">🌱</div>
-        <div style="flex:1;"><p style="font-size:13px;font-weight:800;color:#222;">María López Pérez</p><p style="font-size:10px;color:var(--gray);font-weight:600;">Productora · ★4.2 · 18 ventas</p></div>
+        <div style="flex:1;"><p style="font-size:13px;font-weight:800;color:#222;">Galilea Marchena Villatoro</p><p style="font-size:10px;color:var(--gray);font-weight:600;">Productora · ★4.2 · 18 ventas</p></div>
         <span class="badge badge-green">Activa</span>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:9px 0;padding-top:9px;border-top:1px solid var(--gray2);">
@@ -779,14 +719,11 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SCREEN 13: PERFIL Y CALIFICACIONES
-══════════════════════════════════════════════════ -->
 <div class="screen" id="s-perfil">
   <div class="profile-hero">
     <button class="hero-back" onclick="goTo('s-catalogo')" style="position:static;margin:0 0 13px;">←</button>
     <div class="profile-avatar">🌱</div>
-    <h2 style="font-size:18px;font-weight:900;color:#fff;margin-bottom:2px;">María López Pérez</h2>
+    <h2 style="font-size:18px;font-weight:900;color:#fff;margin-bottom:2px;">Galilea Marchena Villatoros</h2>
     <p style="font-size:11px;color:rgba(255,255,255,.75);font-weight:700;">Productora · Aldea El Naranjo</p>
     <div style="display:flex;justify-content:center;align-items:center;gap:7px;margin-top:9px;">
       <span style="font-size:14px;color:#FFD54F;font-weight:700;">★★★★☆</span>
@@ -802,7 +739,7 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   <div class="content" style="padding-top:0;">
     <div class="card">
       <p style="font-size:11px;font-weight:800;color:var(--g9);text-transform:uppercase;margin-bottom:9px;">📋 Información</p>
-      <div class="info-row"><span style="font-size:14px;">📱</span><div style="flex:1;"><div class="lbl">Teléfono</div><div class="val">5512-3456</div></div></div>
+      <div class="info-row"><span style="font-size:14px;">📱</span><div style="flex:1;"><div class="lbl">Teléfono</div><div class="val">4594-7243</div></div></div>
       <div class="info-row"><span style="font-size:14px;">📍</span><div style="flex:1;"><div class="lbl">Dirección</div><div class="val">Aldea El Naranjo, casa verde</div></div></div>
     </div>
     <div style="background:var(--g0);border:1.5px solid var(--g1);border-radius:13px;padding:13px;margin-bottom:11px;">
@@ -839,10 +776,9 @@ body{font-family:'Nunito',sans-serif;background:#222;display:flex;justify-conten
   </div>
 </div>
 
-</div><!-- /device -->
+</div>
 
 <script>
-// ── Navegación ─────────────────────────────────────────────────────────────
 function goTo(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const target = document.getElementById(id);
@@ -852,7 +788,6 @@ function goTo(id) {
   }
 }
 
-// ── Login: seleccionar rol ─────────────────────────────────────────────────
 function selectRole(btn, role) {
   document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('sel'));
   btn.classList.add('sel');
@@ -866,7 +801,6 @@ function doLogin() {
   else goTo('s-dashboard-asoc');
 }
 
-// ── Cantidad en detalle de producto ───────────────────────────────────────
 let qty = 10;
 function changeQty(delta) {
   qty = Math.max(1, qty + delta);
@@ -874,7 +808,6 @@ function changeQty(delta) {
   document.getElementById('total-val').textContent = 'Q' + (qty * 12);
 }
 
-// ── Estrellas de calificación ──────────────────────────────────────────────
 function rateStar(n) {
   document.querySelectorAll('#stars .star').forEach((s, i) => {
     s.classList.toggle('sel', i < n);
